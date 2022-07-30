@@ -20,10 +20,11 @@ spring:
       server:
         encrypt.enabled: false
         git:
-          uri: https://github.com/carnellj/config-repo/
+          uri: https://bitbucket.org/shunyi-chen/config-repo/src/master/
           searchPaths: licensingservice,organizationservice,specialroutesservice,zuulservice
-          username: native-cloud-apps
-          password: 0ffended
+          username: forerunner2018@hotmail.com
+          password: YMzUdFPQvrHLynPwkMup
+          default-label: master
 
 #Setting logging levels
 logging:
