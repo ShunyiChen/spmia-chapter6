@@ -53,3 +53,8 @@ organizationservice:
     eureka:
       enable: false
     listOfServers: http://localhost:8085
+specialroutesservice:
+  ribbon:
+    eureka:
+      enable: false
+    listOfServers: http://localhost:8910
