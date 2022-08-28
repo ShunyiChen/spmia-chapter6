@@ -1,4 +1,5 @@
-
+server:
+  port: 8910
 #Setting the logging levels for the service
 logging:
   level:

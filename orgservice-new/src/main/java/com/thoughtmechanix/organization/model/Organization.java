@@ -10,7 +10,7 @@ import javax.persistence.Table;
 public class Organization {
     @Id
     @Column(name = "organization_id", nullable = false)
-    String id;
+    String organizationId;
 
     @Column(name = "name", nullable = false)
     String name;
@@ -25,13 +25,12 @@ public class Organization {
     String contactPhone;
 
 
-    public String getId() {
-        return id;
+    public String getOrganizationId() {
+        return organizationId;
     }
 
-
-    public void setId(String id) {
-        this.id = id;
+    public void setOrganizationId(String organizationId) {
+        this.organizationId = organizationId;
     }
 
     public String getName() {

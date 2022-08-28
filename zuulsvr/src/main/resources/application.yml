@@ -8,17 +8,48 @@ logging:
       org.springframework.web: WARN
       com.thoughtmechanix: DEBUG
 
+#eureka:
+#  instance:
+#    preferIpAddress: true
+#  client:
+#    registerWithEureka: true
+#    fetchRegistry: true
+#    serviceUrl:
+#        defaultZone: http://localhost:8761/eureka/
+
 eureka:
-  instance:
-    preferIpAddress: true
   client:
-    registerWithEureka: true
-    fetchRegistry: true
     serviceUrl:
-        defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
+    register-with-eureka: true
+    fetchRegistry: true
+  instance:
+    instance-id: configserver
+    prefer-ip-address: true
+
 
 zuul:
-  prefix:  /api
+  prefix: /api
   routes:
-    item-service: /organization/**
-  organizationservice: /organization/**
+    organizationservice: /organization/**
+
+# ========添加配置=======
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*" #注意这里*要加引号，暴露全部，也可以只暴露相应endpoint
+  endpoint:
+    routes:
+      enabled: true # 默认为true，可以省略
+
+licensingservice:
+  ribbon:
+    eureka:
+      enable: false
+    listOfServers: http://localhost:8080
+organizationservice:
+  ribbon:
+    eureka:
+      enable: false
+    listOfServers: http://localhost:8085
